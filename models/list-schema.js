@@ -1,15 +1,14 @@
 const mongoose = require("mongoose");
 
 const listSchema = new mongoose.Schema({
-
-  name: { 
+  name: {
     type: String,
     require: true,
   },
-    email:{
-        type:String,
-        require:true
-    },
+  email: {
+    type: String,
+    require: true,
+  },
   toDoArray: [
     {
       taskName: {
