@@ -10,7 +10,14 @@ function TodoForm(props) {
             id: Math.floor(Math.random() * 100000),
             text:input
         });
+
+        setInput('');
     }
+
+    
+    const changeHandler = e => {
+      setInput(e.target.value);
+    };
 
   return (
     <form className="todo-form" onSubmit={submitHandler}>
@@ -20,6 +27,7 @@ function TodoForm(props) {
         value={input}
         name="text"
         className="todo-input"
+        onChange={changeHandler}
       />
       <button className="todo-button">Add Todo</button>
     </form>
