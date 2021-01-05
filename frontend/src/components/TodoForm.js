@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 
 function TodoForm(props) {
-  const [input,setInput] = useState('');
+  const [input, setInput] = useState("");
 
-    const submitHandler = (e) => {
-        e.preventDefault(); // Stops the refreshing while submitting
-        
-        props.onSubmit({
-            id: Math.floor(Math.random() * 100000),
-            text:input
-        });
+  const submitHandler = (e) => {
+    e.preventDefault(); // Stops the refreshing while submitting
 
-        setInput('');
-    }
+    props.onSubmit({
+      id: Math.floor(Math.random() * 100000),
+      text: input,
+    });
 
-    
-    const changeHandler = e => {
-      setInput(e.target.value);
-    };
+    setInput("");
+  };
+
+  const changeHandler = (e) => {
+    setInput(e.target.value);
+  };
 
   return (
     <form className="todo-form" onSubmit={submitHandler}>
@@ -31,7 +30,6 @@ function TodoForm(props) {
       />
       <button className="todo-button">Add Todo</button>
     </form>
-    
   );
 }
 
